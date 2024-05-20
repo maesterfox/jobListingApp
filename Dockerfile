@@ -23,4 +23,4 @@ RUN npm run build
 EXPOSE 5173 8000
 
 # Start the application using concurrently to run both the Vite preview server and json-server
-CMD ["npx", "concurrently", "\"vite preview --port 5173 --host\"", "\"json-server --watch public/jobs.json --port 8000\""]
+CMD ["npx", "concurrently", "\"vite preview --port 5173 --host\"", "\"node server.js\""]
