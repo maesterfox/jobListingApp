@@ -19,7 +19,9 @@
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.22.3",
     "react-spinners": "^0.13.8",
-    "react-toastify": "^10.0.4"
+    "react-toastify": "^10.0.4",
+    "json-server": "^1.0.0-alpha.23"
+
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
@@ -30,7 +32,6 @@
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "json-server": "^1.0.0-alpha.23",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "vite": "^5.1.6"
