@@ -7,8 +7,8 @@ WORKDIR /app
 # Copy package.json and package-lock.json first for better caching
 COPY package*.json ./
 
-# Install dependencies locally within the project directory
-RUN npm install --production
+# Install all dependencies, including devDependencies
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
