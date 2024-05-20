@@ -12,10 +12,12 @@ import JobPage, { jobLoader } from "./pages/JobPage";
 import AddJobPage from "./pages/AddJobPage";
 import EditJobPage from "./pages/EditJobPage";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 const App = () => {
   // Add New Job
   const addJob = async (newJob) => {
-    await fetch("/api/jobs", {
+    await fetch(`${API_BASE_URL}/jobs`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +29,7 @@ const App = () => {
 
   // Delete Job
   const deleteJob = async (id) => {
-    await fetch(`/api/jobs/${id}`, {
+    await fetch(`${API_BASE_URL}/jobs/${id}`, {
       method: "DELETE",
     });
     return;
@@ -35,7 +37,7 @@ const App = () => {
 
   // Update Job
   const updateJob = async (job) => {
-    await fetch(`/api/jobs/${job.id}`, {
+    await fetch(`${API_BASE_URL}/jobs/${job.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -68,4 +70,5 @@ const App = () => {
 
   return <RouterProvider router={router} />;
 };
+
 export default App;
