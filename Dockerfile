@@ -1,19 +1,23 @@
-FROM node:16
+# Use the official Node.js 14 image as a base
+FROM node:14
 
-# Create app directory
+# Set the working directory in the container to the root of your project
 WORKDIR /app
 
-# Install app dependencies
+# Copy package.json and package-lock.json first for better caching
 COPY package*.json ./
 
-RUN npm install
+# Install dependencies locally within the project directory
+RUN npm install --production
 
-# Bundle app source
+# Copy the rest of the application code
 COPY . .
 
-# Expose ports
-EXPOSE 5173
-EXPOSE 8000
+# Build the application
+RUN npm run build
 
-# Command to run the application
+# Expose the ports used by Vite and json-server
+EXPOSE 5173 8000
+
+# Start the application using the npm script
 CMD ["npm", "start"]
