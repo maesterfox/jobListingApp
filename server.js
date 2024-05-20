@@ -2,7 +2,7 @@ import jsonServer from "json-server";
 import cors from "cors";
 
 const server = jsonServer.create();
-const router = jsonServer.router("public/jobs.json");
+const router = jsonServer.router("dist/jobs.json");
 const middlewares = jsonServer.defaults();
 
 server.use(middlewares);

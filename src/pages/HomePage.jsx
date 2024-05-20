@@ -2,7 +2,6 @@ import Hero from "../components/Hero";
 import HomeCards from "../components/HomeCards";
 import JobListings from "../components/JobListings";
 import ViewAllJobs from "../components/ViewAllJobs";
-import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -11,7 +10,6 @@ const HomePage = () => {
       <HomeCards />
       <JobListings isHome={true} />
       <ViewAllJobs />
-      <Footer />
     </div>
   );
 };
