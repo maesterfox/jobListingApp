@@ -58,12 +58,12 @@ const JobListings = ({ isHome = false }) => {
   );
 
   return (
-    <section className="bg-blue-50 px-4 py-10">
-      <div className="container-xl lg:container m-auto">
-        <h2 className="text-3xl font-bold text-indigo-500 mb-6 text-center">
+    <section className="bg-gradient-to-r from-blue-50 to-blue-100 px-4 py-10">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-bold text-indigo-600 mb-6 text-center">
           {isHome ? "Recent Jobs" : "Browse Jobs"}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayedJobs.map((job) => (
             <JobListing key={job.id} job={job} />
           ))}
@@ -72,8 +72,10 @@ const JobListings = ({ isHome = false }) => {
           <button
             onClick={handlePreviousPage}
             disabled={page === 1}
-            className={`px-4 py-2 rounded ${
-              page === 1 ? "bg-gray-300" : "bg-indigo-500 text-white"
+            className={`px-4 py-2 rounded shadow-md transition-all duration-300 ${
+              page === 1
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-indigo-500 text-white hover:bg-indigo-600"
             }`}
           >
             Previous
@@ -84,8 +86,10 @@ const JobListings = ({ isHome = false }) => {
           <button
             onClick={handleNextPage}
             disabled={page === totalPages}
-            className={`px-4 py-2 rounded ${
-              page === totalPages ? "bg-gray-300" : "bg-indigo-500 text-white"
+            className={`px-4 py-2 rounded shadow-md transition-all duration-300 ${
+              page === totalPages
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-indigo-500 text-white hover:bg-indigo-600"
             }`}
           >
             Next
