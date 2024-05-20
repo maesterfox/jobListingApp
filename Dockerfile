@@ -1,5 +1,5 @@
-# Use the official Node.js 16 image as a base
-FROM node:16
+# Use the official Node.js 20 image as a base
+FROM node:20
 
 # Set the working directory in the container
 WORKDIR /app
@@ -16,11 +16,11 @@ RUN npm cache clean --force && npm install
 # Copy the rest of the application code
 COPY . .
 
-# Expose the port json-server will run on
-EXPOSE 8000
-
 # Build the application
 RUN npm run build
 
-# Start the application using concurrently to run both the Vite server and json-server
-CMD ["npx", "concurrently", "\"vite preview\"", "\"json-server --watch public/jobs.json --port 8000\""]
+# Expose the ports used by Vite and json-server
+EXPOSE 5173 8000
+
+# Start the application using concurrently to run both the Vite preview server and json-server
+CMD ["npx", "concurrently", "\"vite preview --port 5173 --host\"", "\"json-server --watch public/jobs.json --port 8000\""]
