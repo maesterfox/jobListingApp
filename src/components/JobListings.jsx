@@ -58,9 +58,9 @@ const JobListings = ({ isHome = false }) => {
   );
 
   return (
-    <section className="bg-gradient-to-r from-blue-50 to-blue-100 px-4 py-10">
+    <section className="bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 px-4 py-10">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-indigo-600 mb-6 text-center">
+        <h2 className="text-4xl font-bold text-indigo-700 mb-6 text-center">
           {isHome ? "Recent Jobs" : "Browse Jobs"}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

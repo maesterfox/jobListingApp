@@ -2,7 +2,7 @@ import JobListings from "../components/JobListings";
 
 const JobsPage = () => {
   return (
-    <section className="bg-gradient-to-r from-blue-50 to-blue-100 px-4 py-10 min-h-screen">
+    <section className="bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 min-h-screen">
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold text-indigo-600 mb-6 text-center">
           Job Listings

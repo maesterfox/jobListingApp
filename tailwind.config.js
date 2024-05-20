@@ -27,6 +27,16 @@ export default {
         "custom-light": "0 2px 4px rgba(0, 0, 0, 0.1)",
         "custom-dark": "0 2px 10px rgba(0, 0, 0, 0.2)",
       },
+      textShadow: {
+        "custom-light": "2px 2px 2px rgba(0, 0, 0, 0.1)",
+        "custom-dark": "2px 2px 4px rgba(0, 0, 0, 0.2)",
+      },
+      h2: {
+        fontSize: "1.5rem",
+        fontWeight: "bold",
+        lineHeight: "2rem",
+        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+      },
       transitionProperty: {
         height: "height",
         spacing: "margin, padding",
